@@ -2,16 +2,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await fetch("./components/navbar.html");
     const navbar = await response.text();
-
     document.getElementById("navbar-container").innerHTML = navbar;
+    initNavbar();
 
     const footerResponse = await fetch("./components/footer.html");
     const footer = await footerResponse.text();
     document.getElementById("footer-container").innerHTML = footer;
 
-    initNavbar();
   } catch (error) {
-    console.error("Navbar gagal dimuat:", error);
+    console.error("Gagal memuat komponen:", error);
   }
 });
 
@@ -21,10 +20,7 @@ function initNavbar() {
   const drawer = document.querySelector("[data-mobile-drawer]");
   const backdrop = document.querySelector("[data-backdrop]");
 
-  if (!openBtn || !closeBtn || !drawer || !backdrop) {
-    console.log("Navbar element tidak ditemukan");
-    return;
-  }
+  if (!openBtn || !closeBtn || !drawer || !backdrop) return;
 
   function openMenu() {
     drawer.classList.add("is-open");
@@ -48,4 +44,22 @@ function initNavbar() {
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) closeMenu();
   });
+}
+
+function toggleFooter(head) {
+  const currentBody = head.nextElementSibling;
+  const isOpen = currentBody.classList.contains("active");
+
+  document.querySelectorAll(".bodyCardFooter").forEach((body) => {
+    body.classList.remove("active");
+  });
+
+  document.querySelectorAll(".headCardFooter").forEach((h) => {
+    h.classList.remove("active");
+  });
+
+  if (!isOpen) {
+    currentBody.classList.add("active");
+    head.classList.add("active");
+  }
 }
