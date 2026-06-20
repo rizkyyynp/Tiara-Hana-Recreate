@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("navbar-container").innerHTML = navbar;
 
+    const footerResponse = await fetch("./components/footer.html");
+    const footer = await footerResponse.text();
+    document.getElementById("footer-container").innerHTML = footer;
+
     initNavbar();
   } catch (error) {
     console.error("Navbar gagal dimuat:", error);
@@ -32,8 +36,8 @@ function initNavbar() {
   function closeMenu() {
     drawer.classList.remove("is-open");
     backdrop.classList.remove("is-open");
-    drawer.setAttribute('inert', '');
-  drawer.setAttribute('aria-hidden', 'true');
+    drawer.setAttribute("inert", "");
+    drawer.setAttribute("aria-hidden", "true");
   }
 
   openBtn.addEventListener("click", openMenu);
