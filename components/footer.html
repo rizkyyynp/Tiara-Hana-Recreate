@@ -1,639 +1,671 @@
 <style>
   :root {
-  --footer-bg: #fdfcf8;
-  --gold: #c89c51;
-  --gold-light: rgba(213, 166, 71, 0.4);
-  --dark-blue: #131e2f;
-  --card-bg: #faf5ef;
-  --white: #ffffff;
-}
+    --footer-bg: #fdfcf8;
+    --gold: #c89c51;
+    --gold-light: rgba(213, 166, 71, 0.4);
+    --dark-blue: #131e2f;
+    --card-bg: #faf5ef;
+    --white: #ffffff;
+  }
 
-a {
-  cursor: pointer;
-}
+  a {
+    cursor: pointer;
+  }
 
-footer h1,
-footer h2,
-footer h3,
-footer h4,
-footer h5,
-footer p {
-  margin-block: 0;
-}
+  footer h1,
+  footer h2,
+  footer h3,
+  footer h4,
+  footer h5,
+  footer p {
+    margin-block: 0;
+  }
 
-footer {
-  width: 100%;
-  position: relative;
-  background-color: var(--footer-bg);
-}
+  footer {
+    width: 100%;
+    position: relative;
+    background-color: var(--footer-bg);
+  }
 
-footer .footerHead {
-  width: 100%;
-  padding: 10% 20px 0;
-}
+  footer .footerHead {
+    width: 100%;
+    padding: 10% 20px 0;
+  }
 
-.footerHead .headImage {
-  width: 25%;
-  margin-inline: auto;
-  margin-bottom: 30px;
-}
-
-.footerHead img {
-  width: 100%;
-  display: block;
-}
-
-.footerHead .dividerFooterHead {
-  width: 100%;
-  display: block;
-}
-
-footer .bodyFooter {
-  width: 100%;
-  padding: 30px 0 0;
-}
-
-.bodyFooter .cardFooter {
-  width: 90%;
-  margin: 0 auto 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--gold-light);
-}
-
-.cardFooter .headCardFooter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.headCardFooter h2 {
-  font: 400 22px/25px "Sort Mill Goudy", serif;
-  color: var(--dark-blue);
-  -webkit-text-stroke: 0.2px var(--dark-blue);
-}
-
-.headCardFooter img {
-  width: 20px;
-  height: 10px;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.headCardFooter.active img {
-  transform: rotate(180deg);
-}
-
-.cardFooter .bodyCardFooter {
-  background: var(--card-bg);
-  border: 1px solid var(--gold);
-  border-radius: 5px;
-  padding: 0;
-  margin-top: 0;
-  display: none;
-}
-
-.bodyCardFooter.active {
-  display: block;
-  padding: 15px;
-  margin-top: 10px;
-}
-
-.bodyCardFooter h3 {
-  font: 400 19px/25px "Sort Mill Goudy", serif;
-  color: var(--gold);
-  -webkit-text-stroke: 0.3px var(--gold);
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-
-.bodyCardFooter .copyBodyFooter {
-  padding-left: 10px;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid var(--gold-light);
-}
-
-.cardFooter2 .copyBodyFooter {
-  padding-left: 0;
-}
-
-.copyBodyFooter:last-child {
-  margin-bottom: 0;
-  border-bottom: 0;
-}
-
-.cardFooter2 .copyBodyFooter:last-child {
-  padding-bottom: 0;
-}
-
-.copyBodyFooter h4 {
-  font: 400 17px/24px "Sort Mill Goudy", serif;
-  color: var(--gold);
-  -webkit-text-stroke: 0.2px var(--gold);
-  margin-bottom: 5px;
-}
-
-.copyBodyFooter p {
-  font: 400 16px/24px Rasa, serif;
-  color: var(--dark-blue);
-  -webkit-text-stroke: 0.2px var(--dark-blue);
-}
-
-.cardFooter .flexResort {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-end;
-}
-
-.flexResort .flexLogo {
-  width: 35%;
-}
-
-.flexResort .flexLogo img {
-  width: 100%;
-  display: block;
-}
-
-.cardFooter .flexSocmed {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.flexSocmed .flexIconSocmed {
-  width: 12%;
-}
-
-.flexIconSocmed a,
-.flexIconSocmed a img {
-  width: 100%;
-  display: block;
-}
-
-.cardFooter .btnBook {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btnBook a {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font: 400 18px/25px Rasa, serif;
-  text-align: center;
-  color: var(--white);
-  -webkit-text-stroke: 0.2px var(--white);
-  background: #153651;
-  padding: 8px 5px;
-  border-radius: 5px;
-  border: 1px solid #d5a647;
-}
-
-.cardFooter.cardFooterLast {
-  padding-bottom: 0;
-  border: none;
-}
-
-.bodyFooter .nibContent {
-  margin-top: 25px;
-  margin-bottom: 15px;
-  padding-inline: 20px;
-}
-
-.nibContent img {
-  width: 100%;
-  display: block;
-}
-
-.nibContent h5 {
-  font: 400 14px/20px Rasa, serif;
-  text-align: center;
-  color: var(--dark-blue);
-}
-
-.nibContent .dividerNib1 {
-  margin-bottom: 15px;
-}
-
-.nibContent .dividerNib2 {
-  margin-top: 15px;
-}
-
-.bodyFooter .award1 {
-  margin-bottom: 15px;
-  padding-inline: 20px;
-}
-
-.bodyFooter .flexAward1 {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.flexAward1 .iconAward1 {
-  width: 22%;
-}
-
-.flexAward1 img {
-  width: 100%;
-  display: block;
-}
-
-.award1 .dividerAward1 {
-  width: 100%;
-  display: block;
-}
-
-.bodyFooter .award2 {
-  padding-inline: 20px;
-  padding-bottom: 20px;
-}
-
-.bodyFooter .flexAward2 {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.flexAward2 .iconAward2 {
-  width: 42%;
-}
-
-.flexAward2 img {
-  width: 100%;
-  display: block;
-}
-
-.award2 .iconAward3 {
-  width: 45%;
-  margin-inline: auto;
-  z-index: 4;
-}
-
-.iconAward3 img {
-  width: 100%;
-  display: block;
-}
-
-.footerBottom {
-  width: 100%;
-}
-
-.footerBottom img {
-  width: 100%;
-  display: block;
-}
-
-.bodyFooter .ovBottom {
-  position: absolute;
-  top: -35%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.flexCard,
-.awardContainer {
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
   .footerHead .headImage {
-    width: 17%;
-  }
-
-  .headCardFooter h2 {
-    font-size: 22px;
-  }
-
-  .bodyCardFooter h3 {
-    font-size: 20px;
-  }
-
-  .copyBodyFooter h4 {
-    font-size: 18px;
-  }
-
-  .flexResort .flexLogo {
     width: 25%;
-  }
-
-  .flexSocmed .flexIconSocmed {
-    width: 8%;
-  }
-
-  .btnBook a {
-    font: 400 19px/30px Rasa, serif;
-  }
-
-  .nibContent h5 {
-    font: 400 17px/30px Rasa, serif;
-  }
-
-  .flexAward1 .iconAward1 {
-    width: 18%;
-  }
-
-  .flexAward2 .iconAward2 {
-    width: 33%;
-  }
-
-  .award2 .iconAward3 {
-    width: 38%;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199.98px) {
-  footer {
-    padding: 5% 20px;
-  }
-
-  footer .footerHead {
+    margin-inline: auto;
     margin-bottom: 30px;
-    padding: 0;
   }
 
-  .footerHead .headImage {
-    width: 8%;
+  .footerHead img {
+    width: 100%;
+    display: block;
+  }
+
+  .footerHead .dividerFooterHead {
+    width: 100%;
+    display: block;
   }
 
   footer .bodyFooter {
-    padding: 0;
-  }
-
-  .flexCard {
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    padding: 30px 0 0;
   }
 
   .bodyFooter .cardFooter {
-    width: 24%;
-    margin: 0;
-    padding: 0;
-    border: none;
+    width: 90%;
+    margin: 0 auto 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .cardFooter .headCardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .headCardFooter h2 {
-    font: 400 18px/23px "Sort Mill Goudy", serif;
-  }
-
-  .headCardFooter img {
-    display: none;
-  }
-
-  .cardFooter .bodyCardFooter {
-    display: block;
-    padding: 15px;
-    margin-top: 10px;
-  }
-
-  .bodyCardFooter h3 {
-    font-size: 18px;
-  }
-
-  .copyBodyFooter h4 {
-    font-size: 16px;
-  }
-
-  .copyBodyFooter p {
-    font-size: 15px;
+    font:
+      400 22px/25px "Sort Mill Goudy",
+      serif;
+    color: var(--dark-blue);
     -webkit-text-stroke: 0.2px var(--dark-blue);
   }
 
-  .flexResort .flexLogo {
-    width: 50%;
+  .headCardFooter img {
+    width: 20px;
+    height: 10px;
+    display: block;
+    transition: transform 0.3s ease;
   }
 
-  .flexSocmed .flexIconSocmed {
-    width: 17%;
+  .headCardFooter.active img {
+    transform: rotate(180deg);
   }
 
-  .btnBook a {
-    font: 400 16px/25px Rasa, serif;
-    color: var(--gold);
-    -webkit-text-stroke: 0.1px var(--gold);
-    background: #fbf8f3;
+  .cardFooter .bodyCardFooter {
+    background: var(--card-bg);
     border: 1px solid var(--gold);
-  }
-
-  .bodyFooter .nibContent {
-    margin-block: 30px;
-    padding-block: 20px;
-    border-block: 2px solid #d5a647;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row-reverse;
-  }
-
-  .nibContent img {
+    border-radius: 5px;
+    padding: 0;
+    margin-top: 0;
     display: none;
   }
 
-  .nibContent h5 {
-    font: 400 13px/18px Rasa, serif;
-  }
-
-  .awardContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .bodyFooter .award1 {
-    width: 40%;
-    padding: 0;
-    margin: 0;
-  }
-
-  .bodyFooter .flexAward1 {
-    gap: 15px;
-  }
-
-  .flexAward1 .iconAward1 {
-    width: 20%;
-  }
-
-  .award1 .dividerAward1 {
-    display: none;
-  }
-
-  .bodyFooter .award2 {
-    width: 40%;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .bodyFooter .flexAward2 {
-    width: 65%;
-    gap: 15px;
-  }
-
-  .flexAward2 .iconAward2 {
-    width: 50%;
-  }
-
-  .award2 .iconAward3 {
-    width: 40%;
-  }
-
-  .footerBottom {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  footer {
-    padding: 5% 40px;
-  }
-
-  footer .footerHead {
-    margin-bottom: 30px;
-    padding: 0;
-  }
-
-  .footerHead .headImage {
-    width: 8%;
-  }
-
-  footer .bodyFooter {
-    padding: 0;
-  }
-
-  .flexCard {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .bodyFooter .cardFooter {
-    width: 23%;
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-
-  .headCardFooter h2 {
-    font: 500 20px/25px "Sort Mill Goudy", serif;
-  }
-
-  .headCardFooter img {
-    display: none;
-  }
-
-  .cardFooter .bodyCardFooter {
+  .bodyCardFooter.active {
     display: block;
     padding: 15px;
     margin-top: 10px;
   }
 
   .bodyCardFooter h3 {
-    font-size: 18px;
+    font:
+      400 19px/25px "Sort Mill Goudy",
+      serif;
+    color: var(--gold);
+    -webkit-text-stroke: 0.3px var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .bodyCardFooter .copyBodyFooter {
+    padding-left: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .cardFooter2 .copyBodyFooter {
+    padding-left: 0;
+  }
+
+  .copyBodyFooter:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .cardFooter2 .copyBodyFooter:last-child {
+    padding-bottom: 0;
   }
 
   .copyBodyFooter h4 {
-    font-size: 16px;
+    font:
+      400 17px/24px "Sort Mill Goudy",
+      serif;
+    color: var(--gold);
+    -webkit-text-stroke: 0.2px var(--gold);
+    margin-bottom: 5px;
   }
 
   .copyBodyFooter p {
-    font-size: 15px;
+    font:
+      400 16px/24px Rasa,
+      serif;
+    color: var(--dark-blue);
     -webkit-text-stroke: 0.2px var(--dark-blue);
   }
 
+  .cardFooter .flexResort {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-end;
+  }
+
   .flexResort .flexLogo {
-    width: 40%;
+    width: 35%;
+  }
+
+  .flexResort .flexLogo img {
+    width: 100%;
+    display: block;
+  }
+
+  .cardFooter .flexSocmed {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
   }
 
   .flexSocmed .flexIconSocmed {
     width: 12%;
   }
 
+  .flexIconSocmed a,
+  .flexIconSocmed a img {
+    width: 100%;
+    display: block;
+  }
+
+  .cardFooter .btnBook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .btnBook a {
-    font: 400 17px/25px Rasa, serif;
-    color: var(--gold);
-    -webkit-text-stroke: 0.1px var(--gold);
-    background: #fbf8f3;
-    border: 1px solid var(--gold);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font:
+      400 18px/25px Rasa,
+      serif;
+    text-align: center;
+    color: var(--white);
+    -webkit-text-stroke: 0.2px var(--white);
+    background: #153651;
+    padding: 8px 5px;
+    border-radius: 5px;
+    border: 1px solid #d5a647;
+  }
+
+  .cardFooter.cardFooterLast {
+    padding-bottom: 0;
+    border: none;
   }
 
   .bodyFooter .nibContent {
-    margin-block: 30px;
-    padding-block: 20px;
-    border-block: 2px solid #d5a647;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row-reverse;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-inline: 20px;
   }
 
   .nibContent img {
-    display: none;
+    width: 100%;
+    display: block;
   }
 
   .nibContent h5 {
-    font: 400 14px/20px Rasa, serif;
+    font:
+      400 14px/20px Rasa,
+      serif;
+    text-align: center;
+    color: var(--dark-blue);
   }
 
-  .awardContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .nibContent .dividerNib1 {
+    margin-bottom: 15px;
+  }
+
+  .nibContent .dividerNib2 {
+    margin-top: 15px;
   }
 
   .bodyFooter .award1 {
-    width: 35%;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 15px;
+    padding-inline: 20px;
   }
 
   .bodyFooter .flexAward1 {
-    gap: 15px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
   }
 
   .flexAward1 .iconAward1 {
-    width: 15%;
+    width: 22%;
+  }
+
+  .flexAward1 img {
+    width: 100%;
+    display: block;
   }
 
   .award1 .dividerAward1 {
-    display: none;
+    width: 100%;
+    display: block;
   }
 
   .bodyFooter .award2 {
-    width: 35%;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: flex-end;
+    padding-inline: 20px;
+    padding-bottom: 20px;
   }
 
   .bodyFooter .flexAward2 {
-    width: 50%;
-    gap: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
   }
 
   .flexAward2 .iconAward2 {
-    width: 50%;
+    width: 42%;
+  }
+
+  .flexAward2 img {
+    width: 100%;
+    display: block;
   }
 
   .award2 .iconAward3 {
-    width: 30%;
+    width: 45%;
+    margin-inline: auto;
+    z-index: 4;
+  }
+
+  .iconAward3 img {
+    width: 100%;
+    display: block;
   }
 
   .footerBottom {
-    display: none;
+    width: 100%;
   }
-}
+
+  .footerBottom img {
+    width: 100%;
+    display: block;
+  }
+
+  .bodyFooter .ovBottom {
+    position: absolute;
+    top: -35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .flexCard,
+  .awardContainer {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .footerHead .headImage {
+      width: 17%;
+    }
+
+    .headCardFooter h2 {
+      font-size: 22px;
+    }
+
+    .bodyCardFooter h3 {
+      font-size: 20px;
+    }
+
+    .copyBodyFooter h4 {
+      font-size: 18px;
+    }
+
+    .flexResort .flexLogo {
+      width: 25%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 8%;
+    }
+
+    .btnBook a {
+      font:
+        400 19px/30px Rasa,
+        serif;
+    }
+
+    .nibContent h5 {
+      font:
+        400 17px/30px Rasa,
+        serif;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 18%;
+    }
+
+    .flexAward2 .iconAward2 {
+      width: 33%;
+    }
+
+    .award2 .iconAward3 {
+      width: 38%;
+    }
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    footer {
+      padding: 5% 20px;
+    }
+
+    footer .footerHead {
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    .footerHead .headImage {
+      width: 8%;
+    }
+
+    footer .bodyFooter {
+      padding: 0;
+    }
+
+    .flexCard {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bodyFooter .cardFooter {
+      width: 24%;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .headCardFooter h2 {
+      font:
+        400 18px/23px "Sort Mill Goudy",
+        serif;
+    }
+
+    .headCardFooter img {
+      display: none;
+    }
+
+    .cardFooter .bodyCardFooter {
+      display: block;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .bodyCardFooter h3 {
+      font-size: 18px;
+    }
+
+    .copyBodyFooter h4 {
+      font-size: 16px;
+    }
+
+    .copyBodyFooter p {
+      font-size: 15px;
+      -webkit-text-stroke: 0.2px var(--dark-blue);
+    }
+
+    .flexResort .flexLogo {
+      width: 50%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 17%;
+    }
+
+    .btnBook a {
+      font:
+        400 16px/25px Rasa,
+        serif;
+      color: var(--gold);
+      -webkit-text-stroke: 0.1px var(--gold);
+      background: #fbf8f3;
+      border: 1px solid var(--gold);
+    }
+
+    .bodyFooter .nibContent {
+      margin-block: 30px;
+      padding-block: 20px;
+      border-block: 2px solid #d5a647;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    .nibContent img {
+      display: none;
+    }
+
+    .nibContent h5 {
+      font:
+        400 13px/18px Rasa,
+        serif;
+    }
+
+    .awardContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bodyFooter .award1 {
+      width: 40%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bodyFooter .flexAward1 {
+      gap: 15px;
+      justify-content: flex-start;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 20%;
+    }
+
+    .award1 .dividerAward1 {
+      display: none;
+    }
+
+    .bodyFooter .award2 {
+      width: 40%;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    .bodyFooter .flexAward2 {
+      width: 65%;
+      gap: 15px;
+    }
+
+    .flexAward2 .iconAward2 {
+      width: 50%;
+    }
+
+    .award2 .iconAward3 {
+      width: 30%;
+      margin-inline: 0;
+    }
+
+    .footerBottom {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    footer {
+      padding: 5% 40px;
+    }
+
+    footer .footerHead {
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    .footerHead .headImage {
+      width: 8%;
+    }
+
+    footer .bodyFooter {
+      padding: 0;
+    }
+
+    .flexCard {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bodyFooter .cardFooter {
+      width: 23%;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .headCardFooter h2 {
+      font:
+        500 20px/25px "Sort Mill Goudy",
+        serif;
+    }
+
+    .headCardFooter img {
+      display: none;
+    }
+
+    .cardFooter .bodyCardFooter {
+      display: block;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .bodyCardFooter h3 {
+      font-size: 18px;
+    }
+
+    .copyBodyFooter h4 {
+      font-size: 16px;
+    }
+
+    .copyBodyFooter p {
+      font-size: 15px;
+      -webkit-text-stroke: 0.2px var(--dark-blue);
+    }
+
+    .flexResort .flexLogo {
+      width: 40%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 12%;
+    }
+
+    .btnBook a {
+      font:
+        400 17px/25px Rasa,
+        serif;
+      color: var(--gold);
+      -webkit-text-stroke: 0.1px var(--gold);
+      background: #fbf8f3;
+      border: 1px solid var(--gold);
+    }
+
+    .bodyFooter .nibContent {
+      margin-block: 30px;
+      padding-block: 20px;
+      border-block: 2px solid #d5a647;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    .nibContent img {
+      display: none;
+    }
+
+    .nibContent h5 {
+      font:
+        400 14px/20px Rasa,
+        serif;
+    }
+
+    .awardContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bodyFooter .award1 {
+      width: 35%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bodyFooter .flexAward1 {
+      gap: 15px;
+      justify-content: flex-start;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 15%;
+    }
+
+    .award1 .dividerAward1 {
+      display: none;
+    }
+
+    .bodyFooter .award2 {
+      width: 35%;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    .bodyFooter .flexAward2 {
+      width: 50%;
+      gap: 15px;
+    }
+
+    .flexAward2 .iconAward2 {
+      width: 50%;
+    }
+
+    .award2 .iconAward3 {
+      width: 22%;
+      margin-inline: 0;
+    }
+
+    .footerBottom {
+      display: none;
+    }
+  }
 </style>
 
 <footer>
