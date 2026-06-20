@@ -1,0 +1,938 @@
+<style>
+  /* ============================================
+   BASE STYLES (Mobile First - < 768px)
+   ============================================ */
+  :root {
+    --footer-bg: #fdfcf8;
+    --gold: #c89c51;
+    --gold-light: rgba(213, 166, 71, 0.4);
+    --dark-blue: #131e2f;
+    --card-bg: #faf5ef;
+    --white: #ffffff;
+  }
+
+  /* General */
+  a {
+    cursor: pointer;
+  }
+
+  footer h1,
+  footer h2,
+  footer h3,
+  footer h4,
+  footer h5,
+  footer p {
+    margin-block: 0;
+  }
+
+  /* Footer Container */
+  footer {
+    width: 100%;
+    position: relative;
+    background-color: var(--footer-bg);
+  }
+
+  /* Footer Head */
+  footer .footerHead {
+    width: 100%;
+    padding: 10% 20px 0;
+  }
+
+  .footerHead .headImage {
+    width: 25%;
+    margin-inline: auto;
+    margin-bottom: 30px;
+  }
+
+  .footerHead img {
+    width: 100%;
+    display: block;
+  }
+
+  .footerHead .dividerFooterHead {
+    width: 100%;
+    display: block;
+  }
+
+  /* Body Footer */
+  footer .bodyFooter {
+    width: 100%;
+    padding: 30px 0 0;
+  }
+
+  /* Cards */
+  .bodyFooter .cardFooter {
+    width: 90%;
+    margin: 0 auto 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .cardFooter .headCardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headCardFooter h2 {
+    font:
+      400 22px/25px "Sort Mill Goudy",
+      serif;
+    color: var(--dark-blue);
+    -webkit-text-stroke: 0.2px var(--dark-blue);
+  }
+
+  .headCardFooter img {
+    width: 20px;
+    height: 10px;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .headCardFooter.active img {
+    transform: rotate(180deg);
+  }
+
+  /* Card Body - Accordion */
+  .cardFooter .bodyCardFooter {
+    background: var(--card-bg);
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    padding: 0;
+    margin-top: 0;
+    display: none;
+  }
+
+  .bodyCardFooter.active {
+    display: block;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .bodyCardFooter h3 {
+    font:
+      400 19px/25px "Sort Mill Goudy",
+      serif;
+    color: var(--gold);
+    -webkit-text-stroke: 0.3px var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .bodyCardFooter .copyBodyFooter {
+    padding-left: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .cardFooter2 .copyBodyFooter {
+    padding-left: 0;
+  }
+
+  .copyBodyFooter:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .cardFooter2 .copyBodyFooter:last-child {
+    padding-bottom: 0;
+  }
+
+  .copyBodyFooter h4 {
+    font:
+      400 17px/24px "Sort Mill Goudy",
+      serif;
+    color: var(--gold);
+    -webkit-text-stroke: 0.2px var(--gold);
+    margin-bottom: 5px;
+  }
+
+  .copyBodyFooter p {
+    font:
+      400 16px/24px Rasa,
+      serif;
+    color: var(--dark-blue);
+    -webkit-text-stroke: 0.2px var(--dark-blue);
+  }
+
+  /* Resort & Social */
+  .cardFooter .flexResort {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-end;
+  }
+
+  .flexResort .flexLogo {
+    width: 35%;
+  }
+
+  .flexResort .flexLogo img {
+    width: 100%;
+    display: block;
+  }
+
+  .cardFooter .flexSocmed {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .flexSocmed .flexIconSocmed {
+    width: 12%;
+  }
+
+  .flexIconSocmed a,
+  .flexIconSocmed a img {
+    width: 100%;
+    display: block;
+  }
+
+  .cardFooter .btnBook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btnBook a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font:
+      400 18px/25px Rasa,
+      serif;
+    text-align: center;
+    color: var(--white);
+    -webkit-text-stroke: 0.2px var(--white);
+    background: #153651;
+    padding: 8px 5px;
+    border-radius: 5px;
+    border: 1px solid #d5a647;
+  }
+
+  .cardFooter.cardFooterLast {
+    padding-bottom: 0;
+    border: none;
+  }
+
+  /* NIB Content */
+  .bodyFooter .nibContent {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-inline: 20px;
+  }
+
+  .nibContent img {
+    width: 100%;
+    display: block;
+  }
+
+  .nibContent h5 {
+    font:
+      400 14px/20px Rasa,
+      serif;
+    text-align: center;
+    color: var(--dark-blue);
+  }
+
+  .nibContent .dividerNib1 {
+    margin-bottom: 15px;
+  }
+
+  .nibContent .dividerNib2 {
+    margin-top: 15px;
+  }
+
+  /* Awards */
+  .bodyFooter .award1 {
+    margin-bottom: 15px;
+    padding-inline: 20px;
+  }
+
+  .bodyFooter .flexAward1 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .flexAward1 .iconAward1 {
+    width: 22%;
+  }
+
+  .flexAward1 img {
+    width: 100%;
+    display: block;
+  }
+
+  .award1 .dividerAward1 {
+    width: 100%;
+    display: block;
+  }
+
+  .bodyFooter .award2 {
+    padding-inline: 20px;
+    padding-bottom: 20px;
+  }
+
+  .bodyFooter .flexAward2 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .flexAward2 .iconAward2 {
+    width: 42%;
+  }
+
+  .flexAward2 img {
+    width: 100%;
+    display: block;
+  }
+
+  .award2 .iconAward3 {
+    width: 45%;
+    margin-inline: auto;
+    z-index: 4;
+  }
+
+  .iconAward3 img {
+    width: 100%;
+    display: block;
+  }
+
+  /* Footer Bottom */
+  .footerBottom {
+    width: 100%;
+  }
+
+  .footerBottom img {
+    width: 100%;
+    display: block;
+  }
+
+  .bodyFooter .ovBottom {
+    position: absolute;
+    top: -35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .flexCard,
+  .awardContainer {
+    width: 100%;
+  }
+
+  /* ============================================
+   TABLET (768px - 991.98px)
+   ============================================ */
+  @media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .footerHead .headImage {
+      width: 17%;
+    }
+
+    .headCardFooter h2 {
+      font-size: 22px;
+    }
+
+    .bodyCardFooter h3 {
+      font-size: 20px;
+    }
+
+    .copyBodyFooter h4 {
+      font-size: 18px;
+    }
+
+    .flexResort .flexLogo {
+      width: 25%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 8%;
+    }
+
+    .btnBook a {
+      font:
+        400 19px/30px Rasa,
+        serif;
+    }
+
+    .nibContent h5 {
+      font:
+        400 17px/30px Rasa,
+        serif;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 18%;
+    }
+
+    .flexAward2 .iconAward2 {
+      width: 33%;
+    }
+
+    .award2 .iconAward3 {
+      width: 38%;
+    }
+  }
+
+  /* ============================================
+   DESKTOP (992px - 1199.98px)
+   ============================================ */
+  @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    footer {
+      padding: 5% 20px;
+    }
+
+    footer .footerHead {
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    .footerHead .headImage {
+      width: 8%;
+    }
+
+    footer .bodyFooter {
+      padding: 0;
+    }
+
+    .flexCard {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bodyFooter .cardFooter {
+      width: 24%;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .headCardFooter h2 {
+      font:
+        400 18px/23px "Sort Mill Goudy",
+        serif;
+    }
+
+    .headCardFooter img {
+      display: none;
+    }
+
+    .cardFooter .bodyCardFooter {
+      display: block;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .bodyCardFooter h3 {
+      font-size: 18px;
+    }
+
+    .copyBodyFooter h4 {
+      font-size: 16px;
+    }
+
+    .copyBodyFooter p {
+      font-size: 15px;
+      -webkit-text-stroke: 0.2px var(--dark-blue);
+    }
+
+    .flexResort .flexLogo {
+      width: 50%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 17%;
+    }
+
+    .btnBook a {
+      font:
+        400 16px/25px Rasa,
+        serif;
+      color: var(--gold);
+      -webkit-text-stroke: 0.1px var(--gold);
+      background: #fbf8f3;
+      border: 1px solid var(--gold);
+    }
+
+    .bodyFooter .nibContent {
+      margin-block: 30px;
+      padding-block: 20px;
+      border-block: 2px solid #d5a647;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    .nibContent img {
+      display: none;
+    }
+
+    .nibContent h5 {
+      font:
+        400 13px/18px Rasa,
+        serif;
+    }
+
+    .awardContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bodyFooter .award1 {
+      width: 40%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bodyFooter .flexAward1 {
+      gap: 15px;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 20%;
+    }
+
+    .award1 .dividerAward1 {
+      display: none;
+    }
+
+    .bodyFooter .award2 {
+      width: 40%;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .bodyFooter .flexAward2 {
+      width: 65%;
+      gap: 15px;
+    }
+
+    .flexAward2 .iconAward2 {
+      width: 50%;
+    }
+
+    .award2 .iconAward3 {
+      width: 40%;
+    }
+
+    .footerBottom {
+      display: none;
+    }
+  }
+
+  /* ============================================
+   LARGE DESKTOP (1200px - 1499.98px)
+   ============================================ */
+  @media screen and (min-width: 1200px) and (max-width: 1499.98px) {
+    footer {
+      padding: 5% 40px;
+    }
+
+    .headCardFooter h2 {
+      font:
+        500 20px/25px "Sort Mill Goudy",
+        serif;
+    }
+
+    .flexResort .flexLogo {
+      width: 40%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 12%;
+    }
+
+    .btnBook a {
+      font:
+        400 17px/25px Rasa,
+        serif;
+    }
+
+    .nibContent h5 {
+      font:
+        400 14px/20px Rasa,
+        serif;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 15%;
+    }
+
+    .bodyFooter .flexAward2 {
+      width: 50%;
+    }
+
+    .award2 .iconAward3 {
+      width: 30%;
+    }
+  }
+
+  /* ============================================
+   XL DESKTOP (1500px+)
+   ============================================ */
+  @media screen and (min-width: 1500px) {
+    footer {
+      padding: 5% 40px;
+    }
+
+    .bodyFooter .cardFooter {
+      width: 20%;
+    }
+
+    .headCardFooter h2 {
+      font:
+        500 20px/25px "Sort Mill Goudy",
+        serif;
+    }
+
+    .flexResort .flexLogo {
+      width: 42%;
+    }
+
+    .flexSocmed .flexIconSocmed {
+      width: 12%;
+    }
+
+    .btnBook a {
+      font:
+        400 17px/25px Rasa,
+        serif;
+    }
+
+    .nibContent h5 {
+      font:
+        400 14px/20px Rasa,
+        serif;
+    }
+
+    .bodyFooter .award1 {
+      width: 35%;
+    }
+
+    .flexAward1 .iconAward1 {
+      width: 15%;
+    }
+
+    .bodyFooter .award2 {
+      width: 35%;
+    }
+
+    .bodyFooter .flexAward2 {
+      width: 50%;
+    }
+
+    .award2 .iconAward3 {
+      width: 30%;
+    }
+  }
+</style>
+
+<footer>
+  <div class="footerHead">
+    <div class="headImage">
+      <img
+        src="https://www.tiarahana.com/wp-content/uploads/2026/05/Tiarahana-Logo-2.webp"
+        alt=""
+        loading="lazy"
+      />
+    </div>
+
+    <picture>
+      <source
+        srcset="
+          https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14749.webp
+        "
+        media="(min-width: 992px)"
+      />
+
+      <img
+        src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14802.webp"
+        alt=""
+        class="dividerFooterHead"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+
+  <div class="bodyFooter">
+    <div class="flexCard">
+      <div class="cardFooter">
+        <div
+          class="headCardFooter"
+          id="headCardFooter1"
+          onclick="toggleFooter(this)"
+        >
+          <h2>Our Location</h2>
+
+          <img
+            src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14804.webp"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <div class="bodyCardFooter" id="bodyCardFooter1">
+          <h3>Tiara Hana Indonesia</h3>
+
+          <div class="copyBodyFooter">
+            <h4>HQ Office & Private Lounge</h4>
+            <p>
+              Gd. Puri Begawan Lantai 1, Jl. Pajajaran No. 05-07, Kota Bogor,
+              Jawa Barat 16143
+            </p>
+          </div>
+
+          <div class="copyBodyFooter">
+            <h4>Sales Office</h4>
+            <p>
+              Pondok Indah Office Tower 2, 15th Floor Jl. Sultan Iskandar Muda,
+              Jakarta Selatan 12310
+            </p>
+          </div>
+
+          <h3>Tiara Hana Indonesia</h3>
+
+          <div class="copyBodyFooter">
+            <h4>Brand & Marketing Office</h4>
+            <p>6 Raffles Boulevard, Marina Square, S039594</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardFooter cardFooter2">
+        <div
+          class="headCardFooter"
+          id="headCardFooter2"
+          onclick="toggleFooter(this)"
+        >
+          <h2>Opening Hours</h2>
+
+          <img
+            src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14804.webp"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <div class="bodyCardFooter" id="bodyCardFooter2">
+          <div class="copyBodyFooter">
+            <h4>HQ Office & Private Lounge</h4>
+            <p>Senin - Jumat | 09.00 - 17.00</p>
+          </div>
+
+          <div class="copyBodyFooter">
+            <h4>Sales Office</h4>
+            <p>By Appointment Only</p>
+          </div>
+
+          <div class="copyBodyFooter">
+            <h4>Tiara Hana Singapore</h4>
+            <p>Monday - Friday | 10.00 - 18.00 (Singapore Time)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardFooter">
+        <div
+          class="headCardFooter"
+          id="headCardFooter3"
+          onclick="toggleFooter(this)"
+        >
+          <h2>Our Resort Portfolio</h2>
+
+          <img
+            src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14804.webp"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <div class="bodyCardFooter" id="bodyCardFooter3">
+          <div class="flexResort">
+            <div class="flexLogo">
+              <img
+                src="https://www.tiarahana.com/wp-content/uploads/2026/05/Khasatana-Hadi-Tegallalang-Ubud-Logo.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="flexLogo">
+              <img
+                src="https://www.tiarahana.com/wp-content/uploads/2026/05/Sundancer-Blue-2b.webp"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardFooter cardFooterLast">
+        <div
+          class="headCardFooter"
+          id="headCardFooter4"
+          onclick="toggleFooter(this)"
+        >
+          <h2>Contact Us</h2>
+
+          <img
+            src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14804.webp"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <div class="bodyCardFooter" id="bodyCardFooter4">
+          <div class="flexSocmed">
+            <div class="flexIconSocmed">
+              <a>
+                <img
+                  src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14757.webp"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <div class="flexIconSocmed">
+              <a>
+                <img
+                  src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14758.webp"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <div class="flexIconSocmed">
+              <a>
+                <img
+                  src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14759.webp"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="btnBook">
+            <a> Book Appointment </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nibContent">
+      <img
+        src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14802.webp"
+        alt=""
+        loading="lazy"
+        class="dividerNib1"
+      />
+
+      <h5>NIB : 9120203123415</h5>
+      <h5>© 2026 Tiara Hana. All Rights Reserved.</h5>
+
+      <img
+        src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14802.webp"
+        alt=""
+        loading="lazy"
+        class="dividerNib2"
+      />
+    </div>
+
+    <div class="awardContainer">
+      <div class="award1">
+        <div class="flexAward1">
+          <div class="iconAward1">
+            <img
+              src="https://www.tiarahana.com/wp-content/uploads/2026/05/award1.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+
+          <div class="iconAward1">
+            <img
+              src="https://www.tiarahana.com/wp-content/uploads/2026/05/award2.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+
+          <div class="iconAward1">
+            <img
+              src="https://www.tiarahana.com/wp-content/uploads/2026/05/award3.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <img
+          src="https://www.tiarahana.com/wp-content/uploads/2026/05/Group-14802.webp"
+          alt=""
+          loading="lazy"
+          class="dividerAward1"
+        />
+      </div>
+
+      <div class="award2">
+        <div class="flexAward2">
+          <div class="iconAward2">
+            <img
+              src="https://www.tiarahana.com/wp-content/uploads/2026/05/award1-1.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+
+          <div class="iconAward2">
+            <img
+              src="https://www.tiarahana.com/wp-content/uploads/2026/05/award2-1.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="iconAward3">
+          <img
+            src="https://www.tiarahana.com/wp-content/uploads/2026/05/award3-1.webp"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="footerBottom">
+      <img
+        src="https://www.tiarahana.com/wp-content/uploads/2026/05/bottomFooter.webp"
+        alt=""
+        loading="lazy"
+        class="bgBottom"
+      />
+      <img
+        src="https://www.tiarahana.com/wp-content/uploads/2026/05/Scroll-Group-585.webp"
+        alt=""
+        class="ovBottom"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</footer>
