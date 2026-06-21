@@ -281,7 +281,7 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  background-image: url("/assets/Images/HeroImageMobile.webp");
+  background-image: url("./assets/Images/HeroImageMobile.webp");
   background-position: center;
   background-size: cover;
   aspect-ratio: 4/3;
